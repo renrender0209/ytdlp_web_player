@@ -1,13 +1,14 @@
 services:
   - type: web
     name: ytdlp-web-player
-    env: docker
+    runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    port: 5000
     plan: free
     region: oregon
     envVars:
+      - key: PORT
+        value: "5000"
       - key: APP_TITLE
         value: YT-DLP Player
       - key: THEME_COLOR

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ytdlp-web-player
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    port: 5000
+    plan: free
+    region: oregon
+    envVars:
+      - key: APP_TITLE
+        value: YT-DLP Player
+      - key: THEME_COLOR
+        value: "#ff7300"
+      - key: GENERATE_SPRITE_BELOW
+        value: "1800"
+      - key: AMOLED_BG
+        value: "false"
+      - key: MAX_VIDEO_AGE
+        value: "3600"
+    healthCheckPath: /
